@@ -1,0 +1,360 @@
+:root{
+    --first-tone-purple: #652AB8;
+    --second-tone-purple: #27114B;
+    --third-tone-purple: #1A0B2E;
+    --dark-purple: #11071F;
+    --linkedin-color: #0b86ca;
+    --whatsapp-color: #5df877;
+}
+.bg-dark-purple{
+    background-color: var(--dark-purple) !important;
+}
+.bg-light-purple{
+    background-color: var(--first-tone-purple) !important;
+}
+
+#hamburger-icon-control{
+    position: absolute;
+    visibility: hidden;
+}
+.hamburger-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 10px;
+}
+.slash{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 3px;
+    overflow: visible;
+    background-color: #ffffffba;
+    transition: 1.5s ease;
+}
+.slash::before, .slash::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #ffffffba;
+    transition: 1.5s ease;
+}
+.slash::before{bottom: 8px;}
+.slash::after{top: 8px;}
+
+.hamburger-icon:hover .slash,
+.hamburger-icon:hover .slash::before,
+.hamburger-icon:hover .slash::after
+{
+    background-color: #ffffff;
+}
+#hamburger-icon-control:checked ~ .slash::before{
+    bottom: 0;
+    transform: rotate(90deg);
+}
+#hamburger-icon-control:checked ~ .slash::after{
+    top: 0;
+    transform: rotate(90deg);
+}
+#hamburger-icon-control:checked ~ .slash{
+    transform: rotate(45deg);
+}
+
+header{
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 5px;
+    padding-left: 15px;
+    width: 100%;
+    overflow: visible;
+    opacity: 1;
+    z-index: 9;
+    background-color: #1e0d39;
+    transition: opacity .5s, all 1.5s ease;
+}
+.disable-scrolling {
+    overflow: hidden;
+}  
+nav{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: none;
+    transform: translate(-50%, -50%);
+    transition: 1s ease;
+}
+.brand{
+    font-size: 30px;
+    color:#fff;
+}
+ul{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 25px;
+    padding: 0;
+    text-align: center;
+    list-style: none;
+}
+.nav-link{
+    height: 26px;
+}
+span.links{
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    color: #ffffffa7;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.links[aria-current="page"],
+.links:hover{
+    color: #fff;
+}
+
+.language{
+    position: absolute;
+    bottom: 10vh;
+    left: 50%;
+    display: none;
+    align-items: center;
+    gap: 20px;
+    transform: translate(-50%);
+}
+.language button{
+    color: #828282;
+    border: none;
+    background-color: transparent;
+    transition: .5s ease;
+}
+
+.language button.active{
+    color: #ffffff;
+}
+button#portuguese{
+    position: relative;
+}
+button#portuguese::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -12.4px;
+    transform: translate(-50%, -50%);
+    width: 1.5px;
+    height: 80%;
+    background-color: #ffffff7a;
+}
+button#portuguese:hover,
+button#english:hover{
+    color: #ffffffaa;
+}
+
+main{
+    padding-top: 10em;
+    padding-bottom: 5em;
+    overflow: hidden;
+}
+
+.img-home{
+    background-image: url('img/website-development.svg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 22em;
+    width: 48vw;
+    margin-bottom: 3em;
+}
+main .row{
+    width: 98vw;
+}
+.first-content-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.text-content-main{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.my-name, .my-last-name{
+    font-size: 75px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 1.2px;
+    color: var(--first-tone-purple);
+}
+.career{
+    font-size: 24px;
+    font-weight: 700;
+    color: #828282;
+}
+span.buttons{
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+    margin-top: 4em;
+}
+
+button.download-cv-btn{
+    width: 161px;
+    height:46px;
+    border: none;
+    border-radius: 5px;
+    scale: 1;
+    color: #fff;
+    background-color: var(--first-tone-purple);
+    transition: .8s ease;
+}
+.download-cv-btn:hover{
+    scale: 1.05;
+    background-color: #652ab8ce;
+}
+button.linkedin-btn{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 161px;
+    height:46px;
+    border: 1px solid var(--linkedin-color);
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: transparent;
+    transition: 1s all ease;
+}
+button.linkedin-btn span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-left: 20px;
+}
+button.linkedin-btn img{
+    position: absolute;
+    left: 10px;
+    height: 25px;
+    z-index:5;
+    transition: 1s all ease;
+}
+.linkedin-btn::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 150%;
+    height: 0;
+    z-index: 5;
+    background-color: var(--linkedin-color);
+    transition: 1s all ease;
+}
+.linkedin-btn:hover::before{
+    height:100%
+}
+.linkedin-btn::after{
+    content: 'Open';
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-left: 18px;
+    color: white;
+    opacity: 0;
+    z-index: 7;
+    transition: 2s all ease;
+}
+.linkedin-btn:hover::after{
+    opacity: 1;
+}
+.linkedin-name{
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    color: white;
+    z-index: -1;
+}
+
+span.linkedin-brand{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+#linkedin{
+    color: var(--linkedin-color);
+}
+#about{
+    display: grid;
+    place-items: center;
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+.white-background{
+    display: grid;
+    place-items: center;
+    width: 328px;
+    height: 328px;
+    max-width: 90vw;
+    border: 1px solid #4F4F4F;
+    border-radius: 50%;
+    background: #FFF;
+}
+.about-me-text{
+    max-width: 90vw;
+    margin: auto;
+    overflow: auto;
+}
+.title-about-me{
+    padding-bottom: .5em;
+    font-size: 2.8em;
+    font-weight: 750;
+    text-transform: uppercase;
+    color: #1E0D39;
+}
+.paragraph-about-me{
+    max-height: 30vh;
+    font-weight: 400;
+    color: #fff;
+    overflow: auto;
+}
+#about .row{
+    gap: 8em;
+    padding-top: 1em;
+    min-height: 75vh;
+}
+
+@media (min-width: 768px){
+    main .row{
+        width: 98vw;
+    }
+    .paragraph-about-me{
+        max-height: none;
+    }
+    #about .row{
+        gap: 0;
+    }
+}
+@media (orientation: landscape){
+    main {
+        padding-top: 8em;
+    }
+}
+
+@media screen and (max-width: 756px) {
+    main .row{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
