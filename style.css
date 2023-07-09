@@ -12,7 +12,9 @@
 .bg-light-purple{
     background-color: var(--first-tone-purple) !important;
 }
-
+.color-light-purple{
+    color: var(--first-tone-purple);
+}
 #hamburger-icon-control{
     position: absolute;
     visibility: hidden;
@@ -162,16 +164,21 @@ main{
 }
 
 .img-home{
-    background-image: url('img/website-development.svg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding-bottom: 22em;
+    position: relative;
     width: 48vw;
-    margin-bottom: 3em;
+    margin-bottom: 2em;
+    overflow: visible;
+}
+.img-home img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 45vw;
+    max-height: 348px;
 }
 main .row{
-    width: 98vw;
+    width: 96vw;
 }
 .first-content-main{
     display: flex;
@@ -333,10 +340,63 @@ span.linkedin-brand{
     min-height: 75vh;
 }
 
+#myskills{
+    position: relative;
+    padding-top: 3.5em;
+    padding-bottom: 4em;
+}
+#myskills h1{
+    font-size: 2.8em;
+    font-weight: 750;
+    z-index: 9;
+    color: var(--first-tone-purple);
+}
+#myskills .row{
+    max-width: 80vw;
+    margin: auto;
+    margin-top: 2em;
+}
+#myskills div.col-4{
+    display: flex;
+    justify-content: center;
+}
+.skill-case{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75px;    
+    height: 75px;
+    border-radius: 50%;
+    background-color: #652ab8;
+    scale: 1;
+    transition: .8s ease;
+}
+.skill-case:hover{
+    scale: 1.1;
+    background-color: var(--first-tone-purple);
+}
+.skill-case img{
+    height: 60%;
+}  
+.tooltip-title{
+    position: absolute;
+    top: -30px;
+    padding: 2px 8.5px;
+    font-size: 13px;
+    font-weight: 400;
+    text-align: center;
+    opacity: 0;
+    background-color: var(--dark-purple);
+    border: 1.5px solid var(--first-tone-purple);
+    border-radius: 5px;
+    z-index: 9;
+    transition: 1s ease-out;
+}
+.skill-case:hover .tooltip-title{
+    opacity: 1;
+}
+
 @media (min-width: 768px){
-    main .row{
-        width: 98vw;
-    }
     .paragraph-about-me{
         max-height: none;
     }
@@ -355,6 +415,12 @@ span.linkedin-brand{
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+}
+@media (min-width: 1100px) {
+    main .row{
+        max-width: 1100px;
+        flex-wrap: nowrap;
     }
 }
 
