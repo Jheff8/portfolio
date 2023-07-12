@@ -46,13 +46,13 @@ function toggleNavVisibility() {
     clearTimeout(navVisibilityTimeout2)
 
     if (hamburgerControl.checked) {
-        header.style.paddingBottom = '95vh'
+        header.style.paddingBottom = '92vh'
         navVisibilityTimeout1 = setTimeout(() => {
             nav.style.display = 'block'
-        }, 400)
+        }, 300)
         navVisibilityTimeout2 = setTimeout(() => {
             languageControl.style.display = 'flex'
-        }, 900)
+        }, 700)
     } else {
         header.style.paddingBottom = '10px'
         languageControl.style.display = 'none'
