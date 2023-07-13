@@ -46,7 +46,7 @@ function toggleNavVisibility() {
     clearTimeout(navVisibilityTimeout2)
 
     if (hamburgerControl.checked) {
-        header.style.paddingBottom = '92vh'
+        header.style.paddingBottom = '95vh'
         navVisibilityTimeout1 = setTimeout(() => {
             nav.style.display = 'block'
         }, 300)
@@ -62,15 +62,44 @@ function toggleNavVisibility() {
     }
 }
 
-//  to check visibility of main elements
+//This interval checks which element is on display by checking which nav has the attr "aria-current" equal to "page" and starts the background animation accordingly 
+let lastItemDisplayed
+setInterval(() => {
+    const currentItemOnDisplay = document.querySelector('span[aria-current="page"]')
+    if (lastItemDisplayed != currentItemOnDisplay) {
+        lastItemDisplayed = currentItemOnDisplay
+        if (currentItemOnDisplay.innerHTML == 'HOME' || currentItemOnDisplay.innerHTML == 'MY SKILLS') {
+            switch (currentItemOnDisplay.innerHTML) {
+                case 'HOME':
+                    Particles.init({
+                        selector: '.animated-bg',
+                        speed: 0.019,
+                        maxParticles: 200
+                    })
+                    break
+                case 'MY SKILLS':
+                    Particles.init({
+                        selector: '.animated-bg-2',
+                        speed: 0.019,
+                        maxParticles: 200
+                    })
+                    break
+            }
+        }
+    }
+}, 200);
+
+
+
+//  to check which element is visible
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const targetIndex = mainElements.indexOf(entry.target)
-        changeActiveAnchor(targetIndex)
-      }
+        if (entry.isIntersecting) {
+            const targetIndex = mainElements.indexOf(entry.target)
+            changeActiveAnchor(targetIndex)
+        }
     })
-  }, {
+}, {
     // Set the threshold value to trigger visibility detection
     // A value of 0.5 means at least 50% of the target element needs to be visible
     threshold: 0.5 
@@ -80,6 +109,23 @@ const observer = new IntersectionObserver((entries) => {
 mainElements.forEach(element => {
     observer.observe(element)
 })
+
+// This is resposible for setting and initializing the background animation
+// Obs: only one (the second one) of the animations will run, the other one will be paused
+window.onload = function() {
+    Particles.init({
+      selector: '.animated-bg-2',
+      maxParticles: 200,
+      speed: 0.01,
+      color: '#652AB8'
+    })
+    Particles.init({
+        selector: '.animated-bg',
+        maxParticles: 200,
+        speed: 0.01,
+        color: '#652AB8'
+      })
+}
 
 navbarTogglerBtn.addEventListener('click', changeHamburgerControl)
 

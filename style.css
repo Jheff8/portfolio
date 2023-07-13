@@ -15,6 +15,15 @@
 .color-light-purple{
     color: var(--first-tone-purple);
 }
+.animated-bg,
+.animated-bg-2{
+    position: absolute;
+    display: block;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    pointer-events: none;
+    z-index: 9;
+}
 #hamburger-icon-control{
     position: absolute;
     visibility: hidden;
@@ -76,7 +85,7 @@ header{
     width: 100%;
     overflow: visible;
     opacity: 1;
-    z-index: 9;
+    z-index: 999999;
     background-color: #1e0d39;
     transition: opacity .5s, all 1s ease-out;
 }
@@ -158,6 +167,7 @@ button#english:hover{
 }
 
 main{
+    position: relative;
     padding-top: 10em;
     padding-bottom: 5em;
     overflow: hidden;
@@ -176,6 +186,7 @@ main{
     transform: translate(-50%, -50%);
     width: 45vw;
     max-height: 348px;
+    z-index: 10;
 }
 main .row{
     width: 96vw;
@@ -305,6 +316,7 @@ span.linkedin-brand{
     place-items: center;
     padding-top: 5em;
     padding-bottom: 5em;
+    z-index: 10;
 }
 .white-background{
     display: grid;
@@ -316,6 +328,7 @@ span.linkedin-brand{
     border: 1px solid #4F4F4F;
     border-radius: 50%;
     background: #FFF;
+    z-index: 9;
 }
 .about-me-text{
     max-width: 90vw;
