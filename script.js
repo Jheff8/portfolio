@@ -36,7 +36,7 @@ function scrollToSection(sectionId) {
             }
           clearInterval(intervalId)
         }
-      }, 1000)
+    }, 1000)
 }
 
 function toggleNavVisibility() {
@@ -89,8 +89,6 @@ setInterval(() => {
     }
 }, 200);
 
-
-
 //  to check which element is visible
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -111,19 +109,13 @@ mainElements.forEach(element => {
 })
 
 // This is resposible for setting and initializing the background animation
-// Obs: only one (the second one) of the animations will run, the other one will be paused
 window.onload = function() {
     Particles.init({
-      selector: '.animated-bg-2',
-      maxParticles: 200,
-      speed: 0.01,
-      color: '#652AB8'
-    })
-    Particles.init({
         selector: '.animated-bg',
-        maxParticles: 200,
-        speed: 0.01,
-        color: '#652AB8'
+        maxParticles: 150,
+        speed: 0.08,
+        color: '#652AB8',
+        sizeVariations: 4.5
       })
 }
 
