@@ -191,6 +191,8 @@ main{
 }
 main .row{
     width: 96vw;
+    max-width: 1100px;
+    flex-wrap: nowrap;   
 }
 .first-content-main{
     display: flex;
@@ -414,6 +416,83 @@ span.linkedin-brand{
     opacity: 1;
 }
 
+.swiper-button-prev::after,
+.swiper-button-next::after{
+    content: '';
+}
+#project{
+    padding-top: 4em;
+    padding-bottom: 9em;
+}
+#project h1{
+    padding-bottom: 1em;
+    font-size: 3em;
+    font-weight: 750;
+    color: var(--dark-purple);
+    z-index: 9;
+}
+#project .row{
+    max-width: 1400px;
+}
+.carousel-container{
+    padding-bottom: 1em;
+    max-width: 500px;
+}
+.carousel-container .bi{
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #fff;
+}
+.site-title{
+    font-size: 2.6em;
+    font-weight: 500;
+    color: var(--dark-purple);
+}
+.site-description{
+    text-align: start;
+    font-size: 15px;
+    font-weight: 300;
+    color: #d0cece;
+}
+.carousel-text-block{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    justify-content: center;
+}
+
+.link-visit-site{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5em;
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--dark-purple);
+    transition: .8s ease;
+}
+.link-visit-site::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 1px;
+    transform: translate(-50%);
+    width: 0;
+    height: .8px;
+    background-color: #fff;
+    transition: .8s ease-out;
+}
+.link-visit-site:hover::before{
+    width: 105%;
+}
+.link-visit-site:hover{
+    color: #fff;
+}
+
 @media (orientation: landscape){
     main {
         padding-top: 8em;
@@ -458,7 +537,7 @@ span.linkedin-brand{
         max-width: 140px;
     }   
 }
-@media (max-width: 756px) {
+@media (max-width: 768px) {
     main .row{
         display: flex;
         align-items: center;
@@ -469,11 +548,8 @@ span.linkedin-brand{
     #about .row{
         gap: 0;
     }
-}
-@media (min-width: 1100px) {
-    main .row{
-        max-width: 1100px;
-        flex-wrap: nowrap;
+    .link-visit-site{
+        margin-top: .5em;
     }
 }
 
