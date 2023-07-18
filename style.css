@@ -388,7 +388,7 @@ span.linkedin-brand{
     min-width: 75px;
     min-height: 75px;
     border-radius: 50%;
-    background-color: #652ab8;
+    background-color:  var(--first-tone-purple);
     scale: 1;
     transition: .8s ease;
 }
