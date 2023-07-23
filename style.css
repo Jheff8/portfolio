@@ -4,7 +4,7 @@
     --third-tone-purple: #1A0B2E;
     --dark-purple: #11071F;
     --linkedin-color: #0b86ca;
-    --whatsapp-color: #5df877;
+    --whatsapp-color: #25d366;
 }
 .bg-dark-purple{
     background-color: var(--dark-purple) !important;
@@ -314,7 +314,7 @@ span.linkedin-brand{
     z-index: 1;
 }
 
-#linkedin{
+#linkedin-home{
     color: var(--linkedin-color);
 }
 #about{
@@ -337,7 +337,7 @@ span.linkedin-brand{
     z-index: 9;
 }
 .about-me-text{
-    max-width: 90vw;
+    max-width: 95vw;
     margin: auto;
     overflow: auto;
 }
@@ -493,6 +493,223 @@ span.linkedin-brand{
     color: #fff;
 }
 
+#contact{
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+#contact h2{
+    font-size: 2.8em;
+    font-weight: 750;
+    text-transform: uppercase;
+    color: var(--first-tone-purple);
+    z-index: 9;
+}
+#contact .row{
+    gap: 8em;
+    padding-top: 1em;
+    min-height: 75vh;
+}
+.contact-section-img.white-background{
+    background-color: #f4f4f4;
+}
+.contact-section-img{
+    position: relative;
+}
+.contact-section-img img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 315px;
+    padding-bottom: 30px;
+}
+.contact-text{
+    max-width: 95vw;
+    margin: auto;
+    overflow: auto;
+}
+.paragraph-contact{
+    font-size: 16px;
+    font-weight: 300;
+    text-align: justify;
+    color: #fff;
+    overflow: auto;
+}
+
+.contact-link-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 2em;
+}
+
+.btn-social-media{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 161px;
+    height:41.6px;
+    margin: auto;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 1s all ease;
+}
+.btn-social-media img{
+    position: absolute;
+    left: 10px;
+    height: 25px;
+    z-index: 999;
+}
+.btn-social-media span{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin-left: 20px;
+}
+
+/* linkedin */
+.social-media-linkedin::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 150%;
+    height: 0;
+    background-color: var(--linkedin-color);
+    z-index: 5;
+    transition: 1s all ease;
+}
+.social-media-linkedin::after{
+    content: 'Jhefferson Muzy';
+    font-size: 14px;
+    white-space: nowrap;
+    position: absolute;
+    left: 48%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin-left: 20px;
+    font-weight: 200;
+    color: white;
+    opacity: 0;
+    z-index: 7;
+    transition: 1.2s all ease;
+}
+.social-media-linkedin:hover::before{
+    height:100%
+}
+.social-media-linkedin:hover::after{
+    opacity: 1;
+}
+
+.social-media-linkedin{
+    color: var(--linkedin-color);
+}
+
+/* github */
+.social-media-github::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    border-radius: 5px;
+    background-color: #000000;
+    z-index: 1;
+    transition: 1s all ease;
+}
+.social-media-github::after{
+    content: 'Jheff8';
+    font-size: 14px;
+    font-weight: 200;
+    white-space: nowrap;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin-left: 20px;
+    color: white;
+    opacity: 0;
+    z-index: 5;
+    transition: 1.2s all ease;
+}
+.social-media-github:hover::before{
+    height: 100%;
+}
+.social-media-github:hover:after{
+    opacity: 1;
+}
+.social-media-github img{
+    z-index: 999;
+}
+.social-media-github{
+    color: #ffffff8d;   
+}
+div.white-board-github{
+    position: absolute;
+    left: 10px;
+    width: 22px;
+    height: 23px;
+    margin-left: 1px;
+    border-radius: 50%;
+    background-color: white;
+    z-index: 6;
+}
+
+/* wpp */
+.social-media-whatsapp::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    background-color: var(--whatsapp-color);
+    z-index: 1;
+    transition: 1s all ease;
+}
+.social-media-whatsapp::after{
+    content: '(21) 98166-3374';
+    font-size: 14px;
+    font-weight: 200;
+    white-space: nowrap;
+    position: absolute;
+    left: 60%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    opacity: 0;
+    z-index: 2;
+    transition: 1s all ease;
+} 
+.social-media-whatsapp:hover::before{
+    height: 100%;
+}
+.social-media-whatsapp:hover::after{
+    opacity: 1;
+}
+.social-media-whatsapp{
+    color: var(--whatsapp-color);
+}
+
+@media (hover: none) {
+    .social-media-whatsapp::after,
+    .social-media-github::after,
+    .social-media-linkedin::after{
+        opacity: 1;
+    }
+    .social-media-whatsapp::before,
+    .social-media-github::before,
+    .social-media-linkedin::before{
+        height: 100%;
+    }
+}
+
 @media (orientation: landscape){
     main {
         padding-top: 8em;
@@ -545,7 +762,7 @@ span.linkedin-brand{
     }
 }
 @media (min-width: 768px){
-    #about .row{
+    #about .row, #contact .row{
         gap: 0;
     }
     .link-visit-site{

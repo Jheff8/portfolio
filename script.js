@@ -10,6 +10,12 @@ const listOfElementsInformations = [
     {titleText: 'Mackbook 2', elementDescription: "lorem lorem lorem lorem lorem lorem lorem lorem lorem lorme lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorme lorem lorem lorem lorem", siteLink: 'https://github.com/Jheff8'},
     {titleText: 'Mackbook 3', elementDescription: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur, id magni, officiis quae similique nemo non, quisquam deserunt tempora earum nam cum!", siteLink: 'https://github.com/Jheff8'}
 ]
+// This list contains my social media's informations such as my name/number and a link to it.
+const socialMediaInformations = [
+    {toCopy: 'Jhefferson Muzy', link: 'https://www.linkedin.com/in/jhefferson-muzy-039389247/?_l=en_US'},
+    {toCopy: 'Jheff8', link: 'https://github.com/Jheff8/'},
+    {toCopy: '(21) 98166-3374', link: 'https://wa.me/5521981663374'}
+]
 
 // These variables are used to store the timeout IDs returned by setTimeout. They will be used later to clear the timeouts if needed.
 let navVisibilityTimeout1
@@ -77,6 +83,39 @@ function loadCarouselInfo(index) {
     siteDescription.innerHTML = listOfElementsInformations[index].elementDescription
     siteLink.setAttribute('href', listOfElementsInformations[index].siteLink)
 }
+
+function takeElementIndex(element) {
+    switch (element.id) {
+        case 'linkedin':
+            return 0
+        case 'github':
+            return 1
+        case 'whatsapp':
+            return 2
+    }
+}
+
+function applyStyleBasedOnSize() {
+    const textContentFromContact = document.querySelector('.contact-text')
+    const contactLinkButtons = document.querySelector('.contact-link-buttons')
+    
+    const elementWidth = textContentFromContact.clientWidth
+    if (elementWidth >= 470) {
+        // The elements will be side by side
+        contactLinkButtons.style.display = 'flex'
+        contactLinkButtons.style.flexDirection = 'row'
+
+    } else if (elementWidth > 360){
+        // Two elements will be side by side, while the third one will be below them
+        contactLinkButtons.style.display = 'grid'
+        contactLinkButtons.style.gridTemplateColumns = 'repeat(2, 1fr)'   
+    } else {
+        // All the elements will be one below each other
+        contactLinkButtons.style.display = 'flex'
+        contactLinkButtons.style.flexDirection = 'column'
+    }
+}
+applyStyleBasedOnSize()
 
 //This interval checks which element is on display by checking which nav has the attr "aria-current" equal to "page" and starts the background animation accordingly 
 let lastItemDisplayed
@@ -162,6 +201,7 @@ window.onload = function() {
     })
     loadCarouselInfo(swiper.realIndex)
 }
+window.addEventListener('resize', applyStyleBasedOnSize)
 
 navbarTogglerBtn.addEventListener('click', changeHamburgerControl)
 
@@ -172,3 +212,40 @@ navLink.forEach(element => {
         scrollToSection(section)
     })
 })
+// It is used to control the amount of click on the contact's buttons
+let clickCounter = 0
+
+// This variable is used to store the timeout ID retorned by "setTimeout".
+let doubleClickTime
+
+const socialMediaButton = Array.from(document.querySelectorAll('.btn-social-media'))
+socialMediaButton.forEach(element => {
+    element.addEventListener('click', function(event) {  
+        clickCounter++
+        const index = takeElementIndex(element)
+        if (clickCounter === 1) {
+            // This timeout guarantees that the redirection will not happen immediately, so that the user has enough time to do a double.
+            doubleClickTime = setTimeout(() => {
+                window.open(socialMediaInformations[index].link, '_blank')
+                clickCounter = 0
+            }, 400)
+        } else if (clickCounter === 2) {
+            clearTimeout(doubleClickTime)
+            let textToCopy = socialMediaInformations[index].toCopy
+            if(!navigator.clipboard) {
+                alert("The copy feature is not avaible on your navigator")
+            } else{
+                navigator.clipboard.writeText(textToCopy)
+                .then(() => {
+                    alert('"' + textToCopy +'" was succesfully copied to your clipboard! ')
+                })
+                .catch(() => {
+                    alert('Failed to copy text to your clipboard')
+                })
+            }
+            clickCounter = 0
+        }
+    })
+})
+
+
