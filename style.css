@@ -213,8 +213,8 @@ main .row{
 }
 .career{
     font-size: 24px;
-    font-weight: 650;
-    color: #828282;
+    font-weight: 500;
+    color: #ababab;
     z-index: 999;
 }
 span.buttons{
@@ -342,14 +342,15 @@ span.linkedin-brand{
     overflow: auto;
 }
 .title-about-me{
-    padding-bottom: .5em;
-    font-size: 2.8em;
+    padding-bottom: .2em;
+    font-size: 3em;
     font-weight: 750;
     text-transform: uppercase;
     color: #1E0D39;
 }
 .paragraph-about-me{
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 300;
     color: #fff;
     overflow: auto;
 }
@@ -450,7 +451,7 @@ span.linkedin-brand{
 }
 .site-description{
     text-align: start;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 300;
     color: #d0cece;
 }
@@ -470,7 +471,7 @@ span.linkedin-brand{
     justify-content: center;
     align-items: center;
     margin-top: 1.5em;
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 300;
     color: var(--dark-purple);
     transition: .8s ease;
