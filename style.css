@@ -175,6 +175,7 @@ main{
     position: relative;
     padding-top: 10em;
     padding-bottom: 5em;
+    
     overflow: hidden;
 }
 
@@ -771,6 +772,9 @@ div.white-board-github{
     }
     .link-visit-site{
         margin-top: .5em;
+    }
+    .main-element{
+        min-height: 90vh !important;
     }
 }
 
