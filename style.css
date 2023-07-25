@@ -15,8 +15,7 @@
 .color-light-purple{
     color: var(--first-tone-purple);
 }
-.animated-bg,
-.animated-bg-2{
+.animated-bg{
     position: absolute;
     display: block;
     top: 0; bottom: 0;

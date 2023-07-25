@@ -117,33 +117,6 @@ function applyStyleBasedOnSize() {
 }
 applyStyleBasedOnSize()
 
-//This interval checks which element is on display by checking which nav has the attr "aria-current" equal to "page" and starts the background animation accordingly 
-let lastItemDisplayed
-setInterval(() => {
-    const currentItemOnDisplay = document.querySelector('span[aria-current="page"]')
-    if (lastItemDisplayed != currentItemOnDisplay) {
-        lastItemDisplayed = currentItemOnDisplay
-        if (currentItemOnDisplay.innerHTML == 'HOME' || currentItemOnDisplay.innerHTML == 'MY SKILLS') {
-            switch (currentItemOnDisplay.innerHTML) {
-                case 'HOME':
-                    Particles.init({
-                        selector: '.animated-bg',
-                        speed: 0.019,
-                        maxParticles: 200
-                    })
-                    break
-                case 'MY SKILLS':
-                    Particles.init({
-                        selector: '.animated-bg-2',
-                        speed: 0.019,
-                        maxParticles: 200
-                    })
-                    break
-            }
-        }
-    }
-}, 200);
-
 //  to check which element is visible
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -194,10 +167,27 @@ swiper.on('slideChange', function() {
 window.onload = function() {
     Particles.init({
         selector: '.animated-bg',
-        maxParticles: 150,
-        speed: 0.08,
+        maxParticles: 500,
+        speed: 0.06,
         color: '#652AB8',
-        sizeVariations: 4.5
+        responsive: [
+            {
+                breakpoint: 768,
+                options: {
+                    maxParticles: 400
+                }
+            }, {
+                breakpoint: 425,
+                options: {
+                    maxParticles: 300
+                }
+            }, {
+                breakpoint: 320,
+                options: {
+                    maxParticles: 0
+                }
+            }
+        ]
     })
     loadCarouselInfo(swiper.realIndex)
 }
