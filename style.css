@@ -23,6 +23,11 @@
     pointer-events: none;
     z-index: 9;
 }
+.main-element{
+    min-height: 70vh !important;
+    display: grid !important;
+    place-items: center !important;
+}
 #hamburger-icon-control{
     position: absolute;
     visibility: hidden;
@@ -361,7 +366,7 @@ span.linkedin-brand{
 
 #myskills{
     position: relative;
-    padding-top: 3.5em;
+    padding-top: 5em;
     padding-bottom: 4em;
 }
 #myskills h1{
@@ -421,7 +426,7 @@ span.linkedin-brand{
     content: '';
 }
 #project{
-    padding-top: 4em;
+    padding-top: 5em;
     padding-bottom: 9em;
 }
 #project h1{
@@ -718,7 +723,6 @@ div.white-board-github{
 @media (max-width: 380px) {
     main{
         padding-top: 8em;
-        padding-bottom: 3em;
     }
     .text-content-main{
         gap: 35px;
