@@ -175,7 +175,6 @@ main{
     position: relative;
     padding-top: 10em;
     padding-bottom: 5em;
-    
     overflow: hidden;
 }
 
@@ -546,7 +545,7 @@ span.linkedin-brand{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 15px;
     padding-top: 2em;
 }
 
