@@ -33,6 +33,8 @@
     visibility: hidden;
 }
 .hamburger-icon{
+    position: fixed;
+    right: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -83,7 +85,7 @@ header{
     position: fixed;
     top: 0;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: space-between;
     padding: 10px 5px;
     padding-left: 15px;
@@ -119,15 +121,16 @@ ul{
     list-style: none;
 }
 .nav-link{
-    height: 26px;
+    height: 38px;
 }
 span.links{
     text-align: center;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 22px;
     color: #ffffffa7;
     text-transform: uppercase;
     cursor: pointer;
+    transition: .5s ease;
 }
 .links[aria-current="page"],
 .links:hover{
@@ -774,6 +777,40 @@ div.white-board-github{
     }
     .main-element{
         min-height: 90vh !important;
+    }
+    header{
+        flex-direction: row;
+        align-items: center;
+        justify-content: unset;
+    }
+    nav{
+        position: relative;
+        left: 0;
+        top: 0;
+        transform: translate(0,0);
+    }
+    .header-clickable-content{
+        position: fixed;
+        right: 1em;
+        align-items: center; 
+        gap: 30px;
+    }
+    ul{
+        flex-direction: row;
+        gap: 25px;
+    }
+    .nav-link{
+        height: 10px;
+        min-width: fit-content;
+    }
+    span.links{
+        font-size: 18px;
+    }
+    .language{
+        position: relative;
+        left: 0;
+        bottom: 0;
+        transform: translate(0,0);
     }
 }
 

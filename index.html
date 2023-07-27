@@ -20,32 +20,34 @@
 <body>
      <header>
         <div class="brand">Muzy's</div>
-        <div class="hamburger-icon hide-md">
+        <div class="hamburger-icon d-md-none">
             <input type="checkbox" id="hamburger-icon-control">
             <div class="slash"></div>
         </div>
-        <nav>
-            <ul>
-                <li class="nav-link">
-                    <span aria-current="page" class="links">HOME</span>
-                </li>
-                <li class="nav-link">
-                    <span class="links">ABOUT</span>
-                </li>
-                <li class="nav-link">
-                    <span class="links">MY SKILLS</span>
-                </li>
-                <li class="nav-link">
-                    <span class="links">PROJECT</span>
-                </li>
-                <li class="nav-link">
-                    <span class="links">CONTACT</span>
-                </li>
-            </ul>
-        </nav>
-        <div class="language">
-            <button class="active" id="portuguese">PT</button>
-            <button id="english">EN</button>
+        <div class="header-clickable-content d-md-flex">
+            <nav class="d-md-flex">
+                <ul>
+                    <li class="nav-link">
+                        <span aria-current="page" class="links">HOME</span>
+                    </li>
+                    <li class="nav-link">
+                        <span class="links">ABOUT</span>
+                    </li>
+                    <li class="nav-link">
+                        <span class="links">MY SKILLS</span>
+                    </li>
+                    <li class="nav-link">
+                        <span class="links">PROJECT</span>
+                    </li>
+                    <li class="nav-link">
+                        <span class="links">CONTACT</span>
+                    </li>
+                </ul>
+            </nav>
+            <div class="language d-md-flex">
+                <button class="active" id="portuguese">PT</button>
+                <button id="english">EN</button>
+            </div>
         </div>
      </header>
      <main id="home" class="main-element container-fluid bg-dark-purple d-flex align-items-center justify-content-md-center">
