@@ -148,8 +148,8 @@ const observer = new IntersectionObserver((entries) => {
     })
 }, {
     // Set the threshold value to trigger visibility detection
-    // A value of 0.8 means at least 80% of the target element needs to be visible
-    threshold: 0.8
+    // A value of 0.6 means at least 60% of the target element needs to be visible
+    threshold: 0.6
 })
 
 // Register main elements for observation
