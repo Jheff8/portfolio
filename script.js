@@ -6,9 +6,9 @@ const mainElements = Array.from(document.querySelectorAll('.main-element'))
 
 // This list contains informations about each carousel's elements. It will be used to load the carousel's displayed element informations
 const listOfElementsInformations = [
-    {titleText: 'Mackbook 1', elementDescription: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur, id magni, officiis quae similique nemo non, quisquam deserunt tempora earum nam cum!", siteLink:'https://github.com/Jheff8'},
-    {titleText: 'Mackbook 2', elementDescription: "lorem lorem lorem lorem lorem lorem lorem lorem lorem lorme lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorme lorem lorem lorem lorem", siteLink: 'https://github.com/Jheff8'},
-    {titleText: 'Mackbook 3', elementDescription: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur, id magni, officiis quae similique nemo non, quisquam deserunt tempora earum nam cum!", siteLink: 'https://github.com/Jheff8'}
+    {titleText: 'Mackbook 1', elementDescription: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur, id magni, officiis quae similique nemo non, quisquam deserunt tempora earum nam cum!", siteLink:'https://github.com/Jheff8', githubLink: 'https://github.com/Jheff8'},
+    {titleText: 'Mackbook 2', elementDescription: "lorem lorem lorem lorem lorem lorem lorem lorem lorem lorme lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorme lorem lorem lorem lorem", siteLink: 'https://github.com/Jheff8', githubLink: 'https://github.com/Jheff8'},
+    {titleText: 'Mackbook 3', elementDescription: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur, id magni, officiis quae similique nemo non, quisquam deserunt tempora earum nam cum!", siteLink: 'https://github.com/Jheff8', githubLink: 'https://github.com/Jheff8'}
 ]
 // This list contains my social media's informations such as my name/number and a link to it.
 const socialMediaInformations = [
@@ -98,9 +98,11 @@ function loadCarouselInfo(index) {
     const siteTitle = document.querySelector('.site-title')
     const siteDescription = document.querySelector('.site-description')
     const siteLink = document.querySelector('.site-link')
+    const githubLink = document.querySelector('.github-link')
     siteTitle.innerHTML = listOfElementsInformations[index].titleText
     siteDescription.innerHTML = listOfElementsInformations[index].elementDescription
     siteLink.setAttribute('href', listOfElementsInformations[index].siteLink)
+    githubLink.setAttribute('href', listOfElementsInformations[index].githubLink)
 }
 
 function takeElementIndex(element) {
