@@ -186,30 +186,6 @@ swiper.on('slideChange', function() {
 
 // This is resposible for setting and initializing the background animation and loading the carousel's displayed element informations
 window.onload = function() {
-    Particles.init({
-        selector: '.animated-bg',
-        maxParticles: 500,
-        speed: 0.06,
-        color: '#652AB8',
-        responsive: [
-            {
-                breakpoint: 768,
-                options: {
-                    maxParticles: 400
-                }
-            }, {
-                breakpoint: 425,
-                options: {
-                    maxParticles: 300
-                }
-            }, {
-                breakpoint: 320,
-                options: {
-                    maxParticles: 0
-                }
-            }
-        ]
-    })
     loadCarouselInfo(swiper.realIndex)
 }
 window.addEventListener('resize', () =>{
