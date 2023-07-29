@@ -185,14 +185,15 @@ main{
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 45vw;
+    width: 40vw;
     max-height: 348px;
     z-index: 10;
 }
 main .row{
-    width: 96vw;
+    width: 98vw;
     max-width: 1100px;
     flex-wrap: nowrap;   
+    transition: .5s ease;
 }
 .first-content-main{
     display: flex;
@@ -782,6 +783,11 @@ div.white-board-github{
     .download-cv-btn, .linkedin-btn{
         max-width: 140px;
     }   
+}
+@media (min-width: 900px) {
+    main .row{
+        width: 96vw;
+    }
 }
 @media (max-width: 768px) {
     main .row{
