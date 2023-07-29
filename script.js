@@ -4,6 +4,50 @@ const navLink = document.querySelectorAll('span.links')
 const header = document.querySelector('header')
 const mainElements = Array.from(document.querySelectorAll('.main-element'))
 
+// This variable contains informations about the skills' icon color
+const iconColorConfiguration = {
+    vue: {
+        withColor: {firstColor: '#11F01F', secondColor: '#35495E'},
+        noColor: {firstColor: '#11071F', secondColor: '#27114B'}
+    },
+    jquery: {
+        withColor: {firstColor: '#21609B'},
+        noColor: {firstColor: '#11071F'}
+    },
+    javascript: {
+        withColor: {firstColor:'#F7DF1E', secondColor: '#000'},
+        noColor: {firstColor:'#11071F', secondColor: '#652AB8'}
+    },
+    python: {
+        withColor: {firstColor: 'url(#paint0_linear_87_8204)', secondColor: 'url(#paint1_linear_87_8204)'},
+        noColor: {firstColor: '#11071F', secondColor: '#11071F'}
+    },
+    bootstrap: {
+        withColor: {firstColor: '#6600FF', secondColor: '#FFF'},
+        noColor: {firstColor: '#11071F', secondColor: '#652AB8'}
+    },
+    html: {
+        withColor: {firstColor: '#E44D26', secondColor: '#F16529', thirdColor: '#FFF'},
+        noColor: {firstColor: '#11071F', secondColor: '#11071F', thirdColor: '#652AB8'}
+    },
+    css: {
+        withColor: {firstColor: '#1172B8', secondColor: '#33AADD', thirdColor: '#FFF'},
+        noColor: {firstColor: '#11071F', secondColor: '#11071F', thirdColor: '#652AB8'}
+    },
+    figma: {
+        withColor: {firstColor: '#1ABCFE', secondColor: '#0ACF83', thirdColor: '#FF7262', fourthColor: '#F24E1E', fifthColor: '#A259FF'},
+        noColor: {firstColor: '#11071F', secondColor: '#11071F', thirdColor: '#11071F', fourthColor: '#11071F', fifthColor: '#11071F'}
+    },
+    git: {
+        withColor: {firstColor: '#EE513B', secondColor: '#FFF'},
+        noColor: {firstColor: '#11071F', secondColor: '#652AB8'}
+    },
+    github: {
+        withColor: {firstColor:'#000', secondColor: '#FFF'},
+        noColor: {firstColor:'#11071F', secondColor: '#652AB8'}
+    } 
+}
+
 // This list contains informations about each carousel's elements. It will be used to load the carousel's displayed element informations
 const listOfElementsInformations = [
     {titleText: 'Mackbook 1', elementDescription: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur, id magni, officiis quae similique nemo non, quisquam deserunt tempora earum nam cum!", siteLink:'https://github.com/Jheff8', githubLink: 'https://github.com/Jheff8'},
@@ -138,6 +182,108 @@ function applyStyleBasedOnSize() {
 }
 applyStyleBasedOnSize()
 
+function setIconColors(element, svg) {
+    const colorConfig = takeColorConfiguration(element.id)
+    let paths
+    switch (element.id) {
+        case 'jquery':
+            svg.style.fill = colorConfig.withColor.firstColor
+            break
+        case 'javascript':
+            const rect = svg.querySelector('rect')
+            paths = svg.querySelector('path')
+            rect.style.fill = colorConfig.withColor.firstColor
+            paths.style.fill = colorConfig.withColor.secondColor
+            break
+        case 'github':
+            const circle = svg.querySelector('circle')
+            paths = svg.querySelector('path')
+            circle.style.fill = colorConfig.withColor.firstColor
+            paths.style.fill = colorConfig.withColor.secondColor
+            break
+        default:
+            paths = svg.querySelectorAll('path')
+            paths[0].style.fill = colorConfig.withColor.firstColor
+            paths[1].style.fill = colorConfig.withColor.secondColor
+            if (element.id =='html' || element.id == 'css') {
+                paths[2].style.fill = colorConfig.withColor.thirdColor
+            } else if (element.id == 'figma') {
+                paths[2].style.fill = colorConfig.withColor.thirdColor
+                paths[3].style.fill = colorConfig.withColor.fourthColor
+                paths[4].style.fill = colorConfig.withColor.fifthColor
+            }
+            break
+    }
+}
+
+function removeIconColors(element, svg) {
+    const colorConfig = takeColorConfiguration(element.id)
+    let paths
+    switch (element.id) {
+        case 'jquery':
+            svg.style.fill = colorConfig.noColor.firstColor
+            break
+        case 'javascript':
+            const rect = svg.querySelector('rect')
+            paths = svg.querySelector('path')
+            rect.style.fill = colorConfig.noColor.firstColor
+            paths.style.fill = colorConfig.noColor.secondColor
+            break
+        case 'github':
+            const circle = svg.querySelector('circle')
+            paths = svg.querySelector('path')
+            circle.style.fill = colorConfig.noColor.firstColor
+            paths.style.fill = colorConfig.noColor.secondColor
+            break
+        default:
+            paths = svg.querySelectorAll('path')
+            paths[0].style.fill = colorConfig.noColor.firstColor
+            paths[1].style.fill = colorConfig.noColor.secondColor
+            if (element.id == 'html' || element.id == 'css'){
+                paths[2].style.fill = colorConfig.noColor.thirdColor
+            } else if (element.id == 'figma') {
+                paths[2].style.fill = colorConfig.noColor.thirdColor
+                paths[3].style.fill = colorConfig.noColor.fourthColor
+                paths[4].style.fill = colorConfig.noColor.fifthColor
+            }
+            break
+    }
+}
+
+function takeColorConfiguration(element) {
+    switch (element) {
+        case 'vue':
+            return iconColorConfiguration.vue
+            
+        case 'jquery':
+            return iconColorConfiguration.jquery
+
+        case 'javascript':
+            return iconColorConfiguration.javascript
+
+        case 'python':
+            return iconColorConfiguration.python
+
+        case 'bootstrap':
+            return iconColorConfiguration.bootstrap
+    
+        case 'html':
+            return iconColorConfiguration.html
+                
+        case 'css':
+            return iconColorConfiguration.css
+
+        case 'figma':
+            return iconColorConfiguration.figma
+
+        case 'git':
+            return iconColorConfiguration.git
+                    
+        case 'github':
+            return iconColorConfiguration.github
+    }
+}
+
 //  to check which element is visible
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -240,6 +386,17 @@ socialMediaButton.forEach(element => {
             }
             clickCounter = 0
         }
+    })
+})
+
+const changeColors = Array.from(document.querySelectorAll('.change-svg-color'))
+changeColors.forEach(element => {
+    const svg = element.querySelector('#SVGRepo_iconCarrier')
+    element.addEventListener('mouseenter', () => {
+        setIconColors(element, svg)
+    })
+    element.addEventListener('mouseleave', () => {
+        removeIconColors(element, svg)
     })
 })
 
