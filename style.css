@@ -1,5 +1,6 @@
 :root{
     --first-tone-purple: #652AB8;
+    --dark-light-purple: #3d0d80;
     --second-tone-purple: #27114B;
     --third-tone-purple: #1A0B2E;
     --dark-purple: #11071F;
@@ -238,7 +239,7 @@ button.download-cv-btn{
 }
 .download-cv-btn:hover{
     scale: 1.05;
-    background-color: #3d0d80;
+    background-color: var(--dark-light-purple);
 }
 button.linkedin-btn{
     position: relative;
