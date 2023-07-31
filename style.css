@@ -350,11 +350,22 @@ span.linkedin-brand{
     text-transform: uppercase;
     color: #1E0D39;
 }
+.paragraph-div{
+    overflow: hidden;
+    transition: 1.5s;
+}
+.show-about-me-text,
+.hide-about-me-text{
+    color: var(--dark-purple);
+    font-weight: 400;
+    text-decoration: underline;
+    cursor: pointer;
+}
 .paragraph-about-me{
     font-size: 16px;
     font-weight: 300;
+    text-align: justify;
     color: #fff;
-    overflow: auto;
 }
 #about .row{
     gap: 8em;
@@ -771,6 +782,9 @@ div.white-board-github{
     .project-buttons{
         flex-direction: column;
         align-items: center;
+    }
+    .paragraph-about-me{
+        text-align: left;
     }
 }
 @media (min-width:380.1px) and (max-width: 440px) {

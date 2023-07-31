@@ -4,6 +4,10 @@ const navLink = document.querySelectorAll('span.links')
 const header = document.querySelector('header')
 const mainElements = Array.from(document.querySelectorAll('.main-element'))
 
+// About me section variables
+const showAboutMeText = document.querySelector('.show-about-me-text')
+const hideAboutMeText = document.querySelector('.hide-about-me-text')
+
 // This variable contains informations about the skills' icon color
 const iconColorConfiguration = {
     vue: {
@@ -284,6 +288,20 @@ function takeColorConfiguration(element) {
     }
 }
 
+function fullParagraphSize(toFull) {
+    const paragraphDiv = document.querySelector('.paragraph-div')
+    const firstParagraph = document.querySelector('.paragraph-about-me')
+    if (toFull) {
+        showAboutMeText.style.display = 'none'
+        const fullHeight = paragraphDiv.scrollHeight + 'px'
+        paragraphDiv.style.maxHeight = fullHeight
+    } else {
+        showAboutMeText.style.display = 'inline'
+        paragraphDiv.style.maxHeight = firstParagraph.scrollHeight + 'px'
+    }
+}
+fullParagraphSize(false)
+
 //  to check which element is visible
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -336,11 +354,15 @@ window.onload = function() {
 }
 window.addEventListener('resize', () =>{
     applyStyleBasedOnSize()
+    fullParagraphSize(false)
     // Calling the function "toggleNavVisibility" always when the window width changes is necessary to avoid possible bugs on the header.
     toggleNavVisibility()
 })
 
 navbarTogglerBtn.addEventListener('click', changeHamburgerControl)
+
+showAboutMeText.addEventListener('click', () => {fullParagraphSize(true)})
+hideAboutMeText.addEventListener('click', () => {fullParagraphSize(false)})
 
 navLink.forEach(element => {
     element.addEventListener('click', function() {
