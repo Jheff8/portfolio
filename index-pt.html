@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,15 +20,15 @@
         if (!sessionStorage.getItem('wasLanguageVerified')) {
             sessionStorage.setItem('wasLanguageVerified', 'true')
             changePage()
-
+            
         } else if (sessionStorage.getItem('wasLanguageVerified') == 'false') {
             sessionStorage.setItem('wasLanguageVerified', 'true')
             changePage()
         }
         function changePage() {
             const userLanguage = navigator.language || navigator.userLanguage
-            if (userLanguage.startsWith('pt')) {
-                window.location.href = 'index-pt.html'
+            if (!userLanguage.startsWith('pt')) {
+                window.location.href = 'index.html'
             }
         }
     </script>
@@ -47,22 +47,22 @@
                         <span aria-current="page" class="links" id="link-home">HOME</span>
                     </li>
                     <li class="nav-link">
-                        <span class="links" id="link-about">ABOUT</span>
+                        <span class="links" id="link-about">SOBRE MIM</span>
                     </li>
                     <li class="nav-link">
-                        <span class="links" id="link-myskills">MY SKILLS</span>
+                        <span class="links" id="link-myskills">MINHAS SKILLS</span>
                     </li>
                     <li class="nav-link">
-                        <span class="links" id="link-project">PROJECT</span>
+                        <span class="links" id="link-project">PROJETOS</span>
                     </li>
                     <li class="nav-link">
-                        <span class="links" id="link-contact">CONTACT</span>
+                        <span class="links" id="link-contact">CONTATO</span>
                     </li>
                 </ul>
             </nav>
             <div class="language d-md-flex">
-                <a href="index-pt.html"><button id="portuguese">PT</button></a>
-                <a href="index.html"><button class="active" id="english">EN</button></a>
+                <a href="index-pt.html"><button class="active" id="portuguese">PT</button></a>
+                <a href="index.html"><button id="english">EN</button></a>
             </div>
         </div>
      </header>
@@ -72,12 +72,12 @@
                 <div class="text-content-main p-2">
                     <h1 class="my-name">Jhefferson</h1>
                     <h1 class="my-last-name">Muzy</h1>
-                    <span class="career">front-end developer</span>
+                    <span class="career">desenvolvedor front-end</span>
                 </div>
                 <span class="buttons">
-                    <button class="download-cv-btn" id="download-cv" title="Click to download curriculum">Download CV</button>
+                    <button class="download-cv-btn" id="download-cv" title="Clique para baixar curriculo">Baixar CV</button>
                     <a href="https://www.linkedin.com/in/jhefferson-muzy-039389247/" target="_blank">
-                        <button class="linkedin-btn" id="linkedin-home" title="Click to visit profile on linkedIn">
+                        <button class="linkedin-btn" id="linkedin-home" title="Clique para visitar linkedin">
                             <img src="img/Layer 2.svg">
                             <span class="linkedin-brand">Linkedin</span>
                         </button>
@@ -85,28 +85,28 @@
                 </span>
             </div>
             <div class="col-6 d-none d-md-block img-home">
-                <img src="img/Asset_3_webdevelopment.svg" alt="An image of a man programming on a computer">
+                <img src="img/Asset_3_webdevelopment.svg" alt="Imagem de um homem programando em um computador">
             </div>
         </div>
      </main>
      <section id="about" class="main-element container-fluid bg-light-purple">
         <div class="row">
             <div class="col-6 m-auto d-xs-none white-background">
-                <img src="img/undraw_programming_re_kg9v.svg" alt="An image of a man programming" class="img-fluid">
+                <img src="img/undraw_programming_re_kg9v.svg" alt="Imagem de um homem programando" class="img-fluid">
             </div>
             <div class="about-me-text col-md-6">
-                <h2 class="title-about-me">About Me</h2>
+                <h2 class="title-about-me">Sobre mim</h2>
                 <div class="paragraph-div">
-                    <p class="paragraph-about-me">Hello, World! My name is Jhefferson Muzy, and I'm a programming enthusiast. My journey in this field began a time ago when I watched some videos related to the topic, and I got quite interested in the area. Unfortunately, at that time, I didn't have access to a computer to start my studies. However, I didn't let that stop me, and I decided to start learning even without the proper equipment. Using a notepad and watching programming-related videos, I took my first steps in this area. <span class="show-about-me-text">See More</span></p>
-                    <p class="paragraph-about-me hidden-about-me-text">My journey started with the language Portugol, used for educational purposes, where I learned basic concepts such as syntax, variables, data types, conditionals, and other fundamentals. Shortly after, I began my study in Python, where I had an easy time due to my existing English skills.</p>
-                    <p class="paragraph-about-me hidden-about-me-text">After dedicating about five months to studying Python, I decided to venture into front-end web development and started learning its core technologies: HTML, CSS, and JavaScript. This new journey got me even more excited about programming.</p>
-                    <p class="paragraph-about-me hidden-about-me-text">Currently, I'm determined to expand my knowledge in front-end web development, exploring new technologies, and honing my skills in various tools. <span class="hide-about-me-text">See  less</span></p>
+                    <p class="paragraph-about-me">Olá, Mundo! Meu nome é Jhefferson Muzy, e sou um entusiasta da programação. Minha jornada nesse campo começou há algum tempo, quando assisti a alguns vídeos relacionados ao tema e fiquei bastante interessado na área. Infelizmente, naquela época, eu não tinha acesso a um computador para começar meus estudos. No entanto, não deixei isso me impedir e decidi começar a aprender mesmo sem o equipamento adequado. Utilizando um caderno e assistindo a vídeos relacionados à programação, dei meus primeiros passos nessa área. <span class="show-about-me-text">Ver mais</span></p>
+                    <p class="paragraph-about-me hidden-about-me-text">Minha jornada começou com a linguagem Portugol, utilizada para fins educacionais, onde aprendi conceitos básicos como sintaxe, variáveis, tipos de dados, condicionais e outros fundamentos. Pouco depois, iniciei meus estudos em Python, onde tive facilidade devido ao meu conhecimento prévio da língua inglesa.</p>
+                    <p class="paragraph-about-me hidden-about-me-text">Após dedicar cerca de cinco meses ao estudo de Python, decidi me aventurar no desenvolvimento web front-end e comecei a aprender suas tecnologias principais: HTML, CSS e JavaScript. Essa nova jornada me deixou ainda mais empolgado com programação.</p>
+                    <p class="paragraph-about-me hidden-about-me-text">Atualmente, estou determinado a expandir meu conhecimento no desenvolvimento web front-end, explorando novas tecnologias e aprimorando minhas habilidades em diversas ferramentas. <span class="hide-about-me-text">Ver menos</span></p>
                 </div>
             </div>
         </div>
     </section>
     <section class="main-element bg-dark-purple" id="myskills">
-        <h1 class="text-uppercase text-center">My Skills</h1>
+        <h1 class="text-uppercase text-center">Minhas Skills</h1>
         <div class="row gy-4">
             <div class="col-4 col-md-3">
                 <div class="skill-case change-svg-color"  id="vue">
@@ -258,16 +258,16 @@
         </div>
     </section>
     <section class="container-fluid bg-light-purple main-element" id="project">
-        <h1 class="text-uppercase text-center">projects</h1>
+        <h1 class="text-uppercase text-center">projetos</h1>
         <div class="row m-auto">
             <div class="col-md-6 carousel-container m-auto">
                 <div class="swiper">
                     <div class="swiper-wrapper">
                         <!-- Slides -->
-                        <img src="img/Macbook_watch_shop.png" alt="MacBook's mockup that shows the Watch shop's site." class="swiper-slide img-fluid">
-                        <img src="img/Macbook_odyssey.png" alt="MacBook's mockup that shows the Exposure to Odyssey's site" class="swiper-slide img-fluid">
-                        <img src="img/Macbook_web_store.png" alt="MacBook's mockup that shows the first web store that I've made." class="swiper-slide img-fluid">
-                        <img src="img/Macbook_to-do_list.png" alt="MacBook's mockup that shows the to-do list" class="swiper-slide img-fluid">
+                        <img src="img/Macbook_watch_shop.png" alt="Mockup de um MacBook que mostra o site da Relojoaria." class="swiper-slide img-fluid">
+                        <img src="img/Macbook_odyssey.png" alt="Mockup de um MacBook que mostra o site de Exposição à Odisseia." class="swiper-slide img-fluid">
+                        <img src="img/Macbook_web_store.png" alt="Mockup de um MacBook que mostra o site da minha primeira loja virtual." class="swiper-slide img-fluid">
+                        <img src="img/Macbook_to-do_list.png" alt="Mockup de um MacBook que mostra o site da lista de tarefas." class="swiper-slide img-fluid">
                     </div>
                     <div class="swiper-pagination"></div>
                     <i class="swiper-button-prev bi bi-chevron-left"></i>
@@ -279,7 +279,7 @@
                 <p class="site-description"></p>
                 <div class="d-flex justify-content-center gap-3 gap-md-5 project-buttons">
                     <a href="#" target="_blank" class="site-link" title="Open website">
-                        <span class="visit-link">View live</span>
+                        <span class="visit-link">Visitar Site</span>
                     </a>
                     <a href="#" target="_blank" class="github-link" title="Open github repository">
                         <span class="visit-link">Github Repo</span>
@@ -294,12 +294,12 @@
                 <img src="img/profile-pictures (1).svg" alt="A man beside a large phone with his social media's profile open" class="img-fluid">
             </div>
             <div class="contact-text col-md-6 order-md-first">
-                <h2>Get in Touch</h2>
-                <p class="paragraph-contact">If you are interested in hiring me for a project or to work on your company, feel free to use the buttons below to connect with me on social media. Click once on the button to be redirected to my social media page, twice to copy my name or phone number.</p>
+                <h2>Contate-me</h2>
+                <p class="paragraph-contact">Se você estiver interessado em me contratar para um projeto ou para trabalhar em sua empresa, sinta-se à vontade para usar os botões abaixo para se conectar comigo nas redes sociais. Clique uma vez no botão para ser redirecionado para a minha página nas redes sociais, duas vezes para copiar meu nome ou número de telefone.</p>        
                 <span class="contact-link-buttons m-auto">
                     <button class="btn btn-social-media social-media-linkedin" title="Click once to visit profile, twice to copy name." id="linkedin">
                         <img src="img/Layer 2.svg">
-                        <span>Linkedin</span>
+                        <span>LinkedIn</span>
                     </button>
                     <button class="btn btn-social-media social-media-github" title="Click once to visit profile, twice to copy name." id="github">
                         <div class="white-board-github"></div>

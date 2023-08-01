@@ -148,8 +148,14 @@ function loadCarouselInfo(index) {
     const siteDescription = document.querySelector('.site-description')
     const siteLink = document.querySelector('.site-link')
     const githubLink = document.querySelector('.github-link')
-    siteTitle.innerHTML = listOfElementsInformations[index].titleText
-    siteDescription.innerHTML = listOfElementsInformations[index].elementDescription
+
+    if (window.location.href.includes('index-pt.html')) {
+        siteTitle.innerHTML = listOfElementsInformations[index].portugueseTitle
+        siteDescription.innerHTML = listOfElementsInformations[index].portugueseDescription
+    } else {
+        siteTitle.innerHTML = listOfElementsInformations[index].titleText
+        siteDescription.innerHTML = listOfElementsInformations[index].elementDescription
+    }
     siteLink.setAttribute('href', listOfElementsInformations[index].siteLink)
     githubLink.setAttribute('href', listOfElementsInformations[index].githubLink)
 }
@@ -368,7 +374,7 @@ hideAboutMeText.addEventListener('click', () => {fullParagraphSize(false)})
 navLink.forEach(element => {
     element.addEventListener('click', function() {
         const body = document.body
-        const section = this.innerText.replace(' ', '').toLowerCase()
+        const section = this.id.replace('link-', '')
         if (body.offsetWidth < 768) {
             // The function "changeHamburguerControl" doesn't need to be called if the body's width is equal to or higher than 768 because it means that the hamburger is no longer appearing.
             changeHamburgerControl()
