@@ -284,7 +284,6 @@ button.linkedin-btn img{
     height:100%
 }
 .linkedin-btn::after{
-    content: 'Open';
     white-space: nowrap;
     position: absolute;
     top: 50%;
@@ -296,6 +295,13 @@ button.linkedin-btn img{
     z-index: 7;
     transition: 2s all ease;
 }
+.linkedin-btn.en::after{
+    content: 'Open';
+}
+.linkedin-btn.pt::after{
+    content: 'Abrir';
+}
+
 .linkedin-btn:hover::after{
     opacity: 1;
 }

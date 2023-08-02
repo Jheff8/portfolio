@@ -429,4 +429,16 @@ changeColors.forEach(element => {
     })
 })
 
+// This loads the correct text to linkedin-btn's pseudo element according to the page.
+// If the page URL contains "index-pt.html", it means the page is in Portuguese, so it adds a class named "pt" to the likedin-btn, ensuring that the text displayed will be in Portuguese
+// If it doesn't contain "inde-pt.html", it means the page is in English, so it adds a class named "en" to the linkedin-btn, ensuring that the text displayed will be in English
+const linkedinButton = document.querySelector('.linkedin-btn')
+const isPageInPortuguese = window.location.href.includes('index-pt.html')
+if (isPageInPortuguese) {
+    linkedinButton.classList.remove('en')
+    linkedinButton.classList.add('pt')
+} else{
+    linkedinButton.classList.remove('pt')
+    linkedinButton.classList.add('en')
+}
 
