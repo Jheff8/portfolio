@@ -359,11 +359,18 @@ swiper.on('slideChange', function() {
 window.onload = function() {
     loadCarouselInfo(swiper.realIndex)
 }
+
+let previousWidth = window.innerWidth
 window.addEventListener('resize', () =>{
-    applyStyleBasedOnSize()
-    fullParagraphSize(false)
+    const currentWidth = window.innerWidth
+    if (currentWidth !== previousWidth) {
+        applyStyleBasedOnSize()
+        fullParagraphSize(false)
+    }
     // Calling the function "toggleNavVisibility" always when the window width changes is necessary to avoid possible bugs on the header.
     toggleNavVisibility()
+    previousWidth = currentWidth
+    
 })
 
 navbarTogglerBtn.addEventListener('click', changeHamburgerControl)
