@@ -847,6 +847,7 @@ div.white-board-github{
     .header-clickable-content{
         position: fixed;
         right: 1em;
+        margin-top: 6px;
         align-items: center; 
         gap: 30px;
     }
