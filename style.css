@@ -822,6 +822,9 @@ div.white-board-github{
         align-items: center;
         justify-content: center;
     }
+    .language {
+        font-size: 18px !important;
+    }
 }
 @media (min-width: 768px){
     #about .row, #contact .row{
