@@ -500,7 +500,7 @@ span.linkedin-brand{
     transition: all .8s ease;
 }
 .site-link{
-    box-shadow: 0 0 0 0 var(--third-tone-purple);
+    scale: 1;
     background-color: var(--third-tone-purple);
 }
 .github-link{
@@ -533,8 +533,7 @@ span.linkedin-brand{
     height: 100%;
 } 
 .site-link:hover{
-    box-shadow: 0 0 0 2px var(--third-tone-purple);
-    
+    scale: 1.06;
 }
 
 #contact{
