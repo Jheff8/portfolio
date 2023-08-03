@@ -44,7 +44,7 @@
     height: 3px;
     overflow: visible;
     background-color: #ffffffba;
-    transition: 1.5s ease;
+    transition: 1.1s ease;
 }
 .slash::before, .slash::after{
     content: '';
@@ -52,7 +52,7 @@
     width: 100%;
     height: 3px;
     background-color: #ffffffba;
-    transition: 1.5s ease;
+    transition: 1.1s ease;
 }
 .slash::before{bottom: 8px;}
 .slash::after{top: 8px;}
@@ -88,7 +88,7 @@ header{
     opacity: 1;
     z-index: 999999;
     background-color: #1e0d39;
-    transition: opacity .5s, all 1s ease-out;
+    transition: opacity .5s, all .8s ease-out;
 }
 .disable-scrolling {
     overflow: hidden;
@@ -99,7 +99,7 @@ nav{
     top: 50%;
     display: none;
     transform: translate(-50%, -50%);
-    transition: .5s ease;
+    transition: .3s ease;
 }
 .brand{
     font-size: 30px;
@@ -124,7 +124,7 @@ span.links{
     color: #ffffffa7;
     text-transform: uppercase;
     cursor: pointer;
-    transition: .5s ease;
+    transition: .3s ease;
 }
 .links[aria-current="page"],
 .links:hover{
@@ -144,7 +144,7 @@ span.links{
     color: #828282;
     border: none;
     background-color: transparent;
-    transition: .5s ease;
+    transition: .3s ease;
 }
 
 .language button.active{
@@ -165,7 +165,7 @@ button#portuguese::after{
 }
 button#portuguese:hover,
 button#english:hover{
-    color: #ffffffaa;
+    color: #ffffffcb;
 }
 
 main{
@@ -235,7 +235,7 @@ button.download-cv-btn{
     color: #fff;
     background-color: var(--first-tone-purple);
     z-index: 999;
-    transition: .8s ease;
+    transition: .5s ease;
 }
 .download-cv-btn:hover{
     scale: 1.05;
@@ -254,7 +254,7 @@ button.linkedin-btn{
     cursor: pointer;
     background-color: transparent;
     z-index: 999;
-    transition: 1s all ease;
+    transition: .8s all ease;
 }
 button.linkedin-btn span{
     position: absolute;
@@ -278,7 +278,7 @@ button.linkedin-btn img{
     height: 0;
     z-index: 5;
     background-color: var(--linkedin-color);
-    transition: 1s all ease;
+    transition: .5s all ease-out;
 }
 .linkedin-btn:hover::before{
     height:100%
@@ -293,7 +293,7 @@ button.linkedin-btn img{
     color: white;
     opacity: 0;
     z-index: 7;
-    transition: 2s all ease;
+    transition: .8s all ease;
 }
 .linkedin-btn.en::after{
     content: 'Open';
@@ -358,7 +358,7 @@ span.linkedin-brand{
 }
 .paragraph-div{
     overflow: hidden;
-    transition: 1.5s;
+    transition: 1.3s;
 }
 .show-about-me-text,
 .hide-about-me-text{
@@ -366,6 +366,11 @@ span.linkedin-brand{
     font-weight: 400;
     text-decoration: underline;
     cursor: pointer;
+    transition: .3s ease;
+}
+.show-about-me-text:hover,
+.hide-about-me-text:hover{
+    color: var(--second-tone-purple);
 }
 .paragraph-about-me{
     font-size: 16px;
@@ -497,7 +502,7 @@ span.linkedin-brand{
     color: #d0cecedc;
     border-radius: 5px;
     overflow: hidden;
-    transition: all .8s ease;
+    transition: all .5s ease;
 }
 .site-link{
     scale: 1;
@@ -527,7 +532,7 @@ span.linkedin-brand{
     height: 0;
     background-color: var(--third-tone-purple);
     z-index: 1;
-    transition: .8s ease;
+    transition: .5s ease-out;
 }
 .github-link:hover::before{
     height: 100%;
@@ -625,7 +630,7 @@ span.linkedin-brand{
     height: 0;
     background-color: var(--linkedin-color);
     z-index: 5;
-    transition: 1s all ease;
+    transition: .5s all ease-out;
 }
 .social-media-linkedin::after{
     content: 'Jhefferson Muzy';
@@ -640,7 +645,7 @@ span.linkedin-brand{
     color: white;
     opacity: 0;
     z-index: 7;
-    transition: 1.2s all ease;
+    transition: .5s all ease;
 }
 .social-media-linkedin:hover::before{
     height:100%
@@ -664,7 +669,7 @@ span.linkedin-brand{
     border-radius: 5px;
     background-color: #000000;
     z-index: 1;
-    transition: 1s all ease;
+    transition: .5s all ease-out;
 }
 .social-media-github::after{
     content: 'Jheff8';
@@ -679,7 +684,7 @@ span.linkedin-brand{
     color: white;
     opacity: 0;
     z-index: 5;
-    transition: 1.2s all ease;
+    transition: .5s all ease;
 }
 .social-media-github:hover::before{
     height: 100%;
@@ -714,7 +719,7 @@ div.white-board-github{
     height: 0;
     background-color: var(--whatsapp-color);
     z-index: 1;
-    transition: 1s all ease;
+    transition: .5s all ease-out;
 }
 .social-media-whatsapp::after{
     content: '(21) 98166-3374';
@@ -728,7 +733,7 @@ div.white-board-github{
     color: #ffffff;
     opacity: 0;
     z-index: 2;
-    transition: 1s all ease;
+    transition: .5s all ease;
 } 
 .social-media-whatsapp:hover::before{
     height: 100%;

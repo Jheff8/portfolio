@@ -124,14 +124,14 @@ function toggleNavVisibility() {
             }, 300)
             navVisibilityTimeout2 = setTimeout(() => {
                 languageControl.style.display = 'flex'
-            }, 700)
+            }, 500)
         } else {
             body.classList.remove('disable-scrolling')
             header.style.paddingBottom = '10px'
             languageControl.style.display = 'none'
             navVisibilityTimeout1 = setTimeout(() => {
                 nav.style.display = 'none'
-            }, 400)
+            }, 200)
         }
     } else{
         // This is necessary to avoid a bug in case the page's width increases while the header is open
