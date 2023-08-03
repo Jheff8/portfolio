@@ -85,7 +85,7 @@ header{
     padding: 10px 5px;
     padding-left: 15px;
     width: 100%;
-    min-height: 5vh;
+    min-height: 5vh !important;
     overflow: visible;
     opacity: 1;
     z-index: 999999;
@@ -500,7 +500,7 @@ span.linkedin-brand{
     align-items: center;
     justify-content: center;
     width: 140px;
-    height: 40px;
+    height: 46px;
     text-decoration: none;
     color: #d0cecedc;
     border-radius: 5px;
