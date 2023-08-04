@@ -99,7 +99,7 @@ function scrollToSection(sectionId) {
                 }
                 clearInterval(intervalId)
             }
-        }, 1000)
+        }, 500)
     } else {
         section.scrollIntoView({
             behavior: 'smooth',
