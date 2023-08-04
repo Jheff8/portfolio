@@ -18,12 +18,16 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <script>
+        // This code detects the user's preferred language based on the browser settings and loads the page accordingly.
+
+         // The language verification is performed only once during the session to avoid unnecessary redirects.
         if (!sessionStorage.getItem('wasLanguageVerified')) {
             sessionStorage.setItem('wasLanguageVerified', 'true')
             changePage()
         }
         function changePage() {
             const userLanguage = navigator.language || navigator.userLanguage
+            // If the language doesn't start with 'pt', it indicates that it's not Portuguese, the main index 'index.html', with the English content, will be loaded.
             if (!userLanguage.startsWith('pt')) {
                 window.location.href = 'index.html'
             }
