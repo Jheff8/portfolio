@@ -21,10 +21,6 @@
         if (!sessionStorage.getItem('wasLanguageVerified')) {
             sessionStorage.setItem('wasLanguageVerified', 'true')
             changePage()
-            
-        } else if (sessionStorage.getItem('wasLanguageVerified') == 'false') {
-            sessionStorage.setItem('wasLanguageVerified', 'true')
-            changePage()
         }
         function changePage() {
             const userLanguage = navigator.language || navigator.userLanguage
