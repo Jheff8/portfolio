@@ -106,6 +106,7 @@ nav{
 .brand{
     font-size: 30px;
     font-weight: 700;
+    user-select: none;
     color:#fff;
 }
 ul{
@@ -127,6 +128,7 @@ span.links{
     color: #ffffffa7;
     text-transform: uppercase;
     cursor: pointer;
+    user-select: none;
     transition: .3s ease;
 }
 .links[aria-current="page"],
