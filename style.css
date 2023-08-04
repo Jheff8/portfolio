@@ -818,6 +818,15 @@ div.white-board-github{
         width: 96vw;
     }
 }
+@media (min-width: 1400px){
+    .my-name, .my-last-name{
+        font-size: 6em;
+        line-height: 30px;
+    }
+    span.buttons{
+        margin-top:5em;
+    }
+}
 @media (max-width: 768px) {
     main .row{
         display: flex;
