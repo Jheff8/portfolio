@@ -397,7 +397,7 @@ let doubleClickTime
 
 const socialMediaButton = Array.from(document.querySelectorAll('.btn-social-media'))
 socialMediaButton.forEach(element => {
-    element.addEventListener('click', function(event) {  
+    element.addEventListener('click', () => {  
         clickCounter++
         const index = takeElementIndex(element)
         if (clickCounter === 1) {
@@ -410,14 +410,28 @@ socialMediaButton.forEach(element => {
             clearTimeout(doubleClickTime)
             let textToCopy = socialMediaInformations[index].toCopy
             if(!navigator.clipboard) {
-                alert("The copy feature is not avaible on your navigator")
+                if (window.location.href.includes('index-pt.html')) {
+                    alert('A recurso de copiar não está disponivel no seu navegador.')
+                } else {
+                    alert("The copy feature is not avaible on your navigator.")
+                }
             } else{
                 navigator.clipboard.writeText(textToCopy)
                 .then(() => {
-                    alert('"' + textToCopy +'" was succesfully copied to your clipboard! ')
+                    if (window.location.href.includes('index-pt.html')) {
+                        alert('"' + textToCopy +'" foi copiado para sua área de transferência com sucesso!')
+                    
+                    } else{
+                        alert('"' + textToCopy +'" was succesfully copied to your clipboard!')
+                    }
                 })
                 .catch(() => {
-                    alert('Failed to copy text to your clipboard')
+                    if (window.location.href.includes('index-pt.html')) {
+                        alert('Falha ao copiar o texto para sua área de transferência.')
+
+                    }else {
+                        alert('Failed to copy text to your clipboard.')
+                    }
                 })
             }
             clickCounter = 0
