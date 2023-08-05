@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 :root{
     --first-tone-purple: #652AB8;
     --dark-light-purple: #3d0d80;
@@ -6,6 +7,9 @@
     --dark-purple: #11071F;
     --linkedin-color: #0b86ca;
     --whatsapp-color: #25d366;
+}
+body{
+    font-family: 'Comfortaa', cursive;
 }
 .bg-dark-purple{
     background-color: var(--dark-purple) !important;
@@ -213,15 +217,16 @@ main .row{
 }
 .my-name, .my-last-name{
     font-size: 5em;
-    font-weight: 700;
+    font-weight: bolder;
     line-height: 20px;
     letter-spacing: 1.2px;
     color: var(--first-tone-purple);
 }
 .career{
     font-size: 24px;
-    font-weight: 500;
-    color: #ababab;
+    font-weight: 300;
+    /* color: #ababab; */
+    color: #edd8fb;
     z-index: 999;
 }
 span.buttons{
@@ -381,6 +386,7 @@ span.linkedin-brand{
     font-size: 16px;
     font-weight: 350;
     text-align: justify;
+    hyphens: auto;
     color: #fff;
 }
 #about .row{
@@ -480,6 +486,7 @@ span.linkedin-brand{
 }
 .site-description{
     text-align: justify;
+    hyphens: auto;
     font-size: 16px;
     font-weight: 350;
     color: #d0cece;
@@ -585,6 +592,7 @@ span.linkedin-brand{
     font-size: 16px;
     font-weight: 350;
     text-align: justify;
+    hyphens: auto;
     color: #fff;
     overflow: auto;
 }
