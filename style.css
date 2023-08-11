@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 :root{
     --first-tone-purple: #652AB8;
     --dark-light-purple: #3d0d80;
@@ -7,9 +6,6 @@
     --dark-purple: #11071F;
     --linkedin-color: #0b86ca;
     --whatsapp-color: #25d366;
-}
-body{
-    font-family: 'Comfortaa', cursive;
 }
 .bg-dark-purple{
     background-color: var(--dark-purple) !important;
@@ -217,16 +213,15 @@ main .row{
 }
 .my-name, .my-last-name{
     font-size: 5em;
-    font-weight: bolder;
+    font-weight: 750;
     line-height: 20px;
     letter-spacing: 1.2px;
     color: var(--first-tone-purple);
 }
 .career{
     font-size: 24px;
-    font-weight: 300;
-    /* color: #ababab; */
-    color: #edd8fb;
+    font-weight: 500;
+    color: #ababab;
     z-index: 999;
 }
 span.buttons{
